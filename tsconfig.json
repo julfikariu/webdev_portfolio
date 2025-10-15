@@ -1,7 +1,21 @@
 {
-  "files": [],
+  "compilerOptions": {
+    "baseUrl": ".", // This sets the base path to the root directory of your project
+    "paths": {
+      "@components/*": ["src/components/*"] // Maps the alias to the actual directory
+    },
+    "types": ["vite/client"], // This ensures that TypeScript understands Vite's client-side types
+    "esModuleInterop": true, // Enables module interoperability (if necessary)
+    "moduleResolution": "node", // Ensures node-style module resolution
+    "skipLibCheck": true, // Optional: speeds up type-checking by skipping library checks
+    "strict": true // Optional: Enables strict mode for better type safety
+  },
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
   ]
 }
