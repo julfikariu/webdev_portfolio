@@ -1,68 +1,130 @@
-<template>
-  <div>
-    <!-- Header & Navigation -->
-    <header class="fixed w-full top-0 z-50 bg-gray-900 dark:bg-gray-100 bg-opacity-80 backdrop-blur-sm shadow-xl">
-      <nav class="container mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-        <!-- Logo/Name -->
-        <a href="#home" class="text-2xl font-bold text-teal-400">Julfikar Ali</a>
-
-        <!-- Desktop Navigation -->
-        <ul class="hidden md:flex items-center space-x-6 font-medium text-gray-300 dark:text-gray-700">
-          <li><a href="#home" class="hover:text-teal-400 transition-colors duration-300">Home</a></li>
-          <li><a href="#about" class="hover:text-teal-400 transition-colors duration-300">About</a></li>
-          <li><a href="#experience" class="hover:text-teal-400 transition-colors duration-300">Experience</a></li>
-          <li><a href="#skills" class="hover:text-teal-400 transition-colors duration-300">Skills</a></li>
-          <li><a href="#projects" class="hover:text-teal-400 transition-colors duration-300">Projects</a></li>
-          <li><a href="#education" class="hover:text-teal-400 transition-colors duration-300">Education</a></li>
-          <li><a href="#contact" class="hover:text-teal-400 transition-colors duration-300">Contact</a></li>
-          
-          <!-- Dark Mode Toggle (Desktop) -->
-          <li>
-            <button @click="toggleTheme" id="theme-toggle-desktop" class="focus:outline-none cursor-pointer">
-              <i :class="darkMode ? 'fas fa-moon text-yellow-400' : 'fas fa-sun text-yellow-400'" class="text-xl hover:text-yellow-300 transition-colors duration-300"></i>
-            </button>
-          </li>
-        </ul>
-
-        <!-- Mobile Menu Button -->
-        <div class="flex items-center md:hidden space-x-4">
-          <button id="theme-toggle-mobile" @click="toggleTheme" class="focus:outline-none cursor-pointer">
-            <i :class="darkMode ? 'fas fa-moon text-yellow-400' : 'fas fa-sun text-yellow-400'" class="text-xl hover:text-yellow-300 transition-colors duration-300 cursor-pointer"></i>
-          </button>
-        </div>
-      </nav>
-    </header>
-  </div>
-</template>
-
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUnmounted, watch } from 'vue';
 
-// Ref to hold the theme state
-const darkMode = ref(false);
+const darkMode = ref<boolean>(true);
+const activeSection = ref<string>('home'); // track active menu
 
-// Toggle the theme
-function toggleTheme() {
-  darkMode.value = !darkMode.value;
-  if (darkMode.value) {
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-    localStorage.setItem('theme', 'light');
-  }
+function setDocumentTheme(isDark: boolean) {
+    if (isDark) document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
 }
 
-// Check if a theme is already set in localStorage
+function toggleTheme() {
+    darkMode.value = !darkMode.value;
+}
+
+watch(darkMode, (val) => {
+    setDocumentTheme(val);
+    try {
+        localStorage.setItem('theme', val ? 'dark' : 'light');
+    } catch { }
+}, { immediate: false });
+
 onMounted(() => {
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    darkMode.value = savedTheme === 'dark';
-    if (darkMode.value) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }
+    let savedTheme: string | null = null;
+    try { savedTheme = localStorage.getItem('theme'); } catch { }
+    if (savedTheme === 'dark') darkMode.value = true;
+    else if (savedTheme === 'light') darkMode.value = false;
+    else darkMode.value = true;
+
+    setDocumentTheme(darkMode.value);
+
+    window.addEventListener('scroll', handleScroll);
 });
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+});
+
+// Smooth scroll
+const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+        const yOffset = -80; // offset for fixed header
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+};
+
+// Update active menu based on scroll
+const handleScroll = () => {
+    const sections = ['home', 'about', 'experience', 'skills', 'projects', 'education', 'contact'];
+    const scrollPos = window.scrollY + 100; // small offset for header
+    for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+            const top = el.offsetTop;
+            const bottom = top + el.offsetHeight;
+            if (scrollPos >= top && scrollPos < bottom) {
+                activeSection.value = id;
+            }
+        }
+    }
+};
 </script>
+
+<template>
+    <header class="fixed w-full top-0 z-50 h-18 bg-gray-100 dark:bg-gray-900 bg-opacity-80 backdrop-blur-sm shadow-sm">
+        <nav class="container mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#home" class="text-2xl font-bold text-teal-400">Julfikar Ali</a>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center space-x-6 font-semibold">
+                <li>
+                    <button @click="scrollToSection('home')"
+                        :class="activeSection === 'home' ? 'text-teal-400' : 'text-gray-700 dark:text-gray-300'"
+                        class="hover:text-teal-400 cursor-pointer transition-colors duration-300">Home</button>
+                </li>
+                <li>
+                    <button @click="scrollToSection('about')"
+                        :class="activeSection === 'about' ? 'text-teal-400' : 'text-gray-700 dark:text-gray-300'"
+                        class="hover:text-teal-400 cursor-pointer transition-colors duration-300">About</button>
+                </li>
+                <li>
+                    <button @click="scrollToSection('experience')"
+                        :class="activeSection === 'experience' ? 'text-teal-400' : 'text-gray-700 dark:text-gray-300'"
+                        class="hover:text-teal-400 cursor-pointer transition-colors duration-300">Experience</button>
+                </li>
+                <li>
+                    <button @click="scrollToSection('skills')"
+                        :class="activeSection === 'skills' ? 'text-teal-400' : 'text-gray-700 dark:text-gray-300'"
+                        class="hover:text-teal-400 cursor-pointer transition-colors duration-300">Skills</button>
+                </li>
+                <li>
+                    <button @click="scrollToSection('projects')"
+                        :class="activeSection === 'projects' ? 'text-teal-400' : 'text-gray-700 dark:text-gray-300'"
+                        class="hover:text-teal-400 cursor-pointer transition-colors duration-300">Projects</button>
+                </li>
+                <li>
+                    <button @click="scrollToSection('education')"
+                        :class="activeSection === 'education' ? 'text-teal-400' : 'text-gray-700 dark:text-gray-300'"
+                        class="hover:text-teal-400 cursor-pointer transition-colors duration-300">Education</button>
+                </li>
+                <li>
+                    <button @click="scrollToSection('contact')"
+                        :class="activeSection === 'contact' ? 'text-teal-400' : 'text-gray-700 dark:text-gray-300'"
+                        class="hover:text-teal-400 cursor-pointer transition-colors duration-300">Contact</button>
+                </li>
+
+                <!-- Dark Mode Toggle -->
+                <li>
+                    <button @click="toggleTheme" class="focus:outline-none cursor-pointer"
+                        :title="darkMode ? 'Switch to light' : 'Switch to dark'">
+                        <i
+                            :class="[darkMode ? 'fas fa-moon' : 'fas fa-sun', 'text-xl', 'text-yellow-400', 'hover:text-yellow-300', 'transition-colors', 'duration-200']"></i>
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <div class="flex items-center md:hidden space-x-4">
+                <button @click="toggleTheme" class="focus:outline-none cursor-pointer"
+                    :title="darkMode ? 'Switch to light' : 'Switch to dark'">
+                    <i
+                        :class="[darkMode ? 'fas fa-moon' : 'fas fa-sun', 'text-xl', 'text-yellow-400', 'hover:text-yellow-300', 'transition-colors', 'duration-300']"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+</template>
