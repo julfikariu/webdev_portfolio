@@ -17,7 +17,20 @@
                         Work Experience
                     </h3>
                     <div class="space-y-6">
+
                         <!-- Experience Item 1 -->
+                        <div class="border-l-4 border-gray-300 dark:border-gray-600 pl-6 space-y-2">
+                            <h4 class="text-xl font-bold text-teal-600 dark:text-teal-400">
+                                Software Engineer - UNI FLICK LTD
+                            </h4>
+                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">Jul 2025 - Present</p>
+                            <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
+                                <li>Building a multi-tenant SaaS HRM system from scratch using Laravel, Inertia.js, Vue 3, TypeScript, TailwindCSS. with the team</li>
+                                <li>Implementing features such as staff management, leave applications, training management, account impersonation, and multi-tenant SaaS structure.
+                                </li>
+                                <li>Working on a Property Management System using CodeIgniter, handling modules like tenancy, estate agents, mortgage, insurance, reminders, and transaction history.</li>                               
+                            </ul>
+                        </div>
                         <div class="border-l-4 border-gray-300 dark:border-gray-600 pl-6 space-y-2">
                             <h4 class="text-xl font-bold text-teal-600 dark:text-teal-400">
                                 Software Engineer - Tiger Tech Co,Ltd.

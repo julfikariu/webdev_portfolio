@@ -1,5 +1,14 @@
 <script setup lang="ts">
 import TypingEffect from './TypingEffect.vue';
+// Smooth scroll
+const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+        const yOffset = -80; // offset for fixed header
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+};
 </script>
 
 <template>
@@ -23,15 +32,15 @@ import TypingEffect from './TypingEffect.vue';
 
                     <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-xl mx-auto md:mx-0 animate-fade-in-up">
                         A passionate Full Stack Web Developer with over 4 years of experience, specializing in building
-                        high-performance web applications using modern technologies like Laravel and React.js.
+                        high-performance web applications using modern technologies like Laravel and Vue.js.
                     </p>
 
                     <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
-                        <a href="#contact"
+                        <button @click="scrollToSection('contact')"
                             class="w-full sm:w-auto bg-teal-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-teal-700 transition-colors duration-200 transform hover:scale-105">
                             Hire Me
-                        </a>
-                        <a href="#"
+                        </button>
+                        <a href="/Julfikar Ali_Software_Resume.pdf"
                             class="w-full sm:w-auto text-teal-600 dark:text-teal-400 font-semibold py-3 px-8 rounded-full border border-teal-600 dark:border-teal-400 hover:bg-teal-600 dark:hover:bg-teal-400 hover:text-white transition-colors duration-200">
                             Download CV
                         </a>

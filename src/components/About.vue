@@ -1,5 +1,13 @@
-<script lang="ts">
-
+<script setup lang="ts">
+// Smooth scroll
+const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+        const yOffset = -80; // offset for fixed header
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+};
 
 </script>
 
@@ -42,28 +50,21 @@
                         <div>
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white">Julfikar Ali</h3>
                             <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Full Stack Web Developer</p>
-                            <p class="text-xs text-teal-600 dark:text-teal-400 font-medium mt-1">Laravel & React.js Specialist</p>
+                            <p class="text-xs text-teal-600 dark:text-teal-400 font-medium mt-1">Laravel & Vue.js Specialist</p>
                         </div>
 
                         <!-- Contact Buttons -->
                         <div class="flex flex-col sm:flex-row lg:flex-col gap-3 pt-2">
                             <a href="mailto:julfikariucs15@gmail.com"
                                 class="inline-flex items-center justify-center gap-2 text-sm font-medium px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-all duration-200 group min-w-0">
-                                <svg class="w-4 h-4 text-teal-600 dark:text-teal-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M3 8.5v7A2.5 2.5 0 0 0 5.5 18h13A2.5 2.5 0 0 0 21 15.5v-7"
-                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                                <span class="truncate">julfikariucs15@gmail.com</span>
+                                <i class="fas fa-envelope w-4 h-4 text-teal-600 dark:text-teal-400 flex-shrink-0"></i>
+                                <span class="truncate text-gray-700 dark:text-white">julfikariucs15@gmail.com</span>
                             </a>
 
                             <a href="tel:+8801521459316"
                                 class="inline-flex items-center justify-center gap-2 text-sm font-medium px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-all duration-200 group min-w-0">
-                                <svg class="w-4 h-4 text-teal-600 dark:text-teal-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path
-                                        d="M22 16.92V21a1 1 0 0 1-1.11 1A19 19 0 0 1 3 5.11 1 1 0 0 1 4 4h4.09a1 1 0 0 1 1 .75c.12.66.37 1.3.73 1.84l-.27.27a16 16 0 0 0 6.36 6.36l.27-.27c.54.36 1.18.61 1.84.73a1 1 0 0 1 .75 1V21z"
-                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                                <span class="truncate">+8801521459316</span>
+                                <i class="fas fa-phone-alt w-4 h-4 text-teal-600 dark:text-teal-400 flex-shrink-0"></i>
+                                <span class="truncate text-gray-700 dark:text-white">+8801521459316</span>
                             </a>
                         </div>
                     </div>
@@ -94,11 +95,11 @@
                         </div>
                         <div class="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-xl border border-gray-100 dark:border-gray-600">
                             <p class="font-semibold text-gray-800 dark:text-gray-100 text-sm md:text-base">Location</p>
-                            <p class="text-gray-500 dark:text-gray-300 text-sm mt-1">Kushtia, Bangladesh</p>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm mt-1">Khulna, Bangladesh</p>
                         </div>
                         <div class="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-xl border border-gray-100 dark:border-gray-600">
                             <p class="font-semibold text-gray-800 dark:text-gray-100 text-sm md:text-base">Primary Stack</p>
-                            <p class="text-gray-500 dark:text-gray-300 text-sm mt-1">Laravel • React • MySQL</p>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm mt-1">Laravel • Vue.js • MySQL</p>
                         </div>
                         <div class="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-xl border border-gray-100 dark:border-gray-600">
                             <p class="font-semibold text-gray-800 dark:text-gray-100 text-sm md:text-base">Availability</p>
@@ -111,39 +112,33 @@
                         <h5 class="font-semibold text-gray-800 dark:text-gray-200 mb-3 text-sm md:text-base">Core Technologies</h5>
                         <div class="flex flex-wrap gap-2 md:gap-3">
                             <span class="px-3 py-1.5 rounded-full bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300 text-xs md:text-sm border border-teal-100 dark:border-teal-800">Laravel</span>
-                            <span class="px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-xs md:text-sm border border-blue-100 dark:border-blue-800">React</span>
+                            <span class="px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 text-xs md:text-sm border border-blue-100 dark:border-blue-800">Vue</span>
                             <span class="px-3 py-1.5 rounded-full bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 text-xs md:text-sm border border-purple-100 dark:border-purple-800">REST APIs</span>
                             <span class="px-3 py-1.5 rounded-full bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 text-xs md:text-sm border border-orange-100 dark:border-orange-800">MySQL</span>
                             <span class="px-3 py-1.5 rounded-full bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 text-xs md:text-sm border border-green-100 dark:border-green-800">Testing</span>
                             <span class="px-3 py-1.5 rounded-full bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300 text-xs md:text-sm border border-red-100 dark:border-red-800">CI / CD</span>
                             <span class="px-3 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300 text-xs md:text-sm border border-indigo-100 dark:border-indigo-800">JavaScript</span>
+                            <span class="px-3 py-1.5 rounded-full bg-yellow-50 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-300 text-xs md:text-sm border border-yellow-100 dark:border-yellow-800">TypeScript</span>                
+                            <span class="px-3 py-1.5 rounded-full bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs md:text-sm border border-gray-200 dark:border-gray-600">Inertia.js</span>
+        
+
                             <span class="px-3 py-1.5 rounded-full bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs md:text-sm border border-gray-200 dark:border-gray-600">Tailwind CSS</span>
                         </div>
                     </div>
 
                     <!-- Action Buttons -->
                     <div class="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2">
-                        <a href="/Julfikar_Ali_CV.pdf"
+                        <a href="/Julfikar Ali_Software_Resume.pdf" target="_blank"
                             class="inline-flex items-center justify-center gap-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition-all duration-200 transform hover:scale-[1.02] hover:shadow-xl group text-sm md:text-base">
-                            <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M7 10l5 5 5-5" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M12 15V3" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
+                            <i class="fas fa-download w-4 h-4 md:w-5 md:h-5"></i>
                             Download CV
                         </a>
 
-                        <a href="#contact"
+                        <button @click="scrollToSection('contact')"
                             class="inline-flex items-center justify-center gap-3 border border-teal-600 text-teal-600 dark:text-teal-400 dark:border-teal-400 font-semibold px-6 py-3 rounded-xl hover:bg-teal-50 dark:hover:bg-gray-700 transition-all duration-200 group text-sm md:text-base">
-                            <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
+                            <i class="fas fa-envelope w-4 h-4 md:w-5 md:h-5"></i>
                             Contact Me
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>

@@ -92,7 +92,7 @@
                         </div>
                         <div class="flex items-center justify-center md:justify-start space-x-2">
                             <i class="fas fa-map-marker-alt text-teal-500 dark:text-teal-400 text-sm"></i>
-                            <span>Kushtia, Bangladesh</span>
+                            <span>Khulna, Bangladesh</span>
                         </div>
                     </div>
                     <div class="flex justify-center md:justify-start space-x-5 text-2xl pt-2">
@@ -127,7 +127,7 @@
             <div class="mt-12 pt-8 border-t border-gray-300 dark:border-gray-700 text-center">
                 <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
                     <p class="text-gray-500 dark:text-gray-400 text-sm">
-                        &copy; 2024 Julfikar Ali. All rights reserved.
+                        &copy; 2025 Julfikar Ali. All rights reserved.
                     </p>
                 </div>
             </div>

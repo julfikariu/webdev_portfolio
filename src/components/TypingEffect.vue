@@ -17,7 +17,7 @@ interface Props {
 
 // use withDefaults() instead of inline type+object
 const props = withDefaults(defineProps<Props>(), {
-  phrases: () => ['Developer', 'Web Engineer', 'Full Stack'],
+  phrases: () => ['Software Engineer (PHP/Laravel)', 'Full Stack Web Developer', 'Backend Developer', 'Web Engineer'],
   typingSpeed: 120,
   deletingSpeed: 60,
   pause: 1400,

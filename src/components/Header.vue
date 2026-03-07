@@ -67,7 +67,7 @@ const handleScroll = () => {
     <header class="fixed w-full top-0 z-50 h-18 bg-gray-100 dark:bg-gray-900 bg-opacity-80 backdrop-blur-sm shadow-sm">
         <nav class="container mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
             <!-- Logo -->
-            <a href="#home" class="text-2xl font-bold text-teal-400">Julfikar Ali</a>
+            <a href="/" class="text-2xl font-bold text-teal-400">&lt;JA&gt;</a>
 
             <!-- Desktop Menu -->
             <ul class="hidden md:flex items-center space-x-6 font-semibold">
