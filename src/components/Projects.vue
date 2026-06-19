@@ -6,6 +6,36 @@
         <h2 class="text-3xl md:text-4xl font-bold text-center text-teal-500 dark:text-teal-400 mb-12">
             Personal Projects
         </h2>
+
+          <!-- Project Card 4 - HRM SaaS -->
+        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-8 md:flex transform hover:-translate-y-2 transition-transform duration-300">
+            <div class="md:w-1/2 p-8 md:p-12 order-2 md:order-1">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">HRM (SaaS)</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-6">
+                    Developed a comprehensive SaaS-based Human Resource Management (HRM) platform that helps organizations manage their workforce, operations, and internal communication from a centralized dashboard. The system includes multiple HR modules such as staff management, attendance tracking, leave applications, training management, performance appraisal, reminders, document management, and calendar-based scheduling.
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 mb-6">
+                    The platform also provides subscription management, working eligibility tracking, enhanced DBS management, and automated notifications to streamline HR workflows. Administrators and managers can monitor employee activities, manage records, and automate communication through email alerts and reminders.
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 mb-6">
+                    The system is designed with a modern dashboard interface, modular sidebar navigation, and role-based access control to support scalable SaaS operations for multiple organizations.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">Laravel</span>
+                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">Vue.js</span>
+                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">Inertia.js</span>
+                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">Tailwind CSS</span>
+                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">MySQL</span>
+                </div>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                    <a href="#" class="bg-teal-500 text-white font-semibold py-2 px-6 rounded-full text-sm hover:bg-teal-600 transition-colors duration-300 text-center">Live Site</a>
+                    <a href="/project-details/hrm-saas" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-semibold py-2 px-6 rounded-full text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300 text-center">View Details</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex items-center justify-center p-4 order-1 md:order-2">
+                <img src="/img/hrm_dashboard.png" alt="HRM SaaS Platform" class="rounded-2xl w-full h-100 object-fit">
+            </div>
+        </div>
         
         <!-- Project Card 1 -->
         <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-8 md:flex transform hover:-translate-y-2 transition-transform duration-300">
@@ -80,6 +110,8 @@
                 </div>
             </div>
         </div>
+
+      
     </div>
 </section>
 
