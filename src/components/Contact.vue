@@ -12,7 +12,7 @@
                         <i class="fas fa-map-marker-alt text-2xl text-teal-600 dark:text-teal-400 flex-shrink-0"></i>
                         <div>
                             <p class="text-gray-800 dark:text-white font-semibold">Address</p>
-                            <p class="text-gray-600 dark:text-gray-400">Khulna, Bangladesh</p>
+                            <p class="text-gray-600 dark:text-gray-400">Dhaka, Bangladesh</p>
                         </div>
                     </div>
                     <div class="flex items-start space-x-4">

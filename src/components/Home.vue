@@ -31,8 +31,7 @@ const scrollToSection = (id: string) => {
                     </h2>
 
                     <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8 max-w-xl mx-auto md:mx-0 animate-fade-in-up">
-                        A passionate Full Stack Web Developer with over 4 years of experience, specializing in building
-                        high-performance web applications using modern technologies like Laravel and Vue.js.
+                        Designing scalable architectures, high-performance Laravel ecosystems, robust Vue 3 systems, and database optimization. Over 4 years of experience delivering robust engineering solutions.
                     </p>
 
                     <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8">

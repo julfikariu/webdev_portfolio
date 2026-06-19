@@ -1,118 +1,113 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const projects = ref([
+    {
+        title: 'HRM SaaS Platform',
+        situation: 'Organizations struggled with fragmented HR processes, manual attendance tracking, and lack of centralized scheduling.',
+        task: 'Architect a scalable, multi-tenant SaaS application to centralize workforce management, subscription billing, and role-based access for diverse organizations.',
+        action: 'Developed a robust Laravel/Vue.js architecture utilizing Inertia.js for seamless SPA navigation. Implemented automated notification pipelines, secure document management, and modular role-based access controls.',
+        result: 'Delivered a highly performant platform that reduced HR manual workload by streamlining operations and automating critical workflows like leave approvals and scheduling.',
+        tech: ['Laravel', 'Vue.js', 'Inertia.js', 'Tailwind CSS', 'MySQL'],
+        image: '/img/hrm_dashboard.png',
+        liveLink: '#',
+        detailsLink: '/project-details/hrm-saas',
+        isReverse: false
+    },
+    {
+        title: 'E-Commerce Synchronization Engine',
+        situation: 'A retail business required a modern, scalable online storefront with a robust admin panel capable of managing large product catalogs and tracking orders.',
+        task: 'Build a secure, full-stack e-commerce application handling everything from user registration to complex product categorizations and order lifecycle management.',
+        action: 'Designed a high-performance database schema in MySQL to handle complex aggregations. Built a RESTful backend using Laravel to sync product APIs and utilized jQuery/Bootstrap for dynamic, responsive frontend interactions.',
+        result: 'Created a highly responsive shopping experience with seamless checkout flows, enabling efficient inventory tracking and accelerating order processing.',
+        tech: ['Laravel', 'MySQL DB', 'jQuery', 'Bootstrap', 'JavaScript', 'HTML/CSS'],
+        image: 'https://placehold.co/300x200/222222/a3e635?text=E-Commerce',
+        liveLink: '#',
+        sourceLink: '#',
+        isReverse: true
+    },
+    {
+        title: 'LMS with Secure Payment Gateways',
+        situation: 'Instructors lacked a streamlined platform to monetize their courses with secure, integrated payment processing.',
+        task: 'Engineer a lightweight Learning Management System supporting distinct instructor/student roles, course browsing, and secure transaction flows.',
+        action: 'Implemented secure authentication models and integrated third-party payment APIs (PayPal, Stripe) within a custom PHP/Laravel backend to handle transactional integrity.',
+        result: 'Successfully launched a monetization channel for tutors, ensuring secure and reliable course purchases with zero transaction drops.',
+        tech: ['Laravel', 'PHP', 'MySQL DB', 'JavaScript', 'HTML/CSS'],
+        image: 'https://placehold.co/200x100/222222/a3e635?text=LMS',
+        liveLink: '#',
+        sourceLink: '#',
+        isReverse: false
+    },
+    {
+        title: 'Helpdesk Automation & Tracking System',
+        situation: 'Contest administrators needed a way to dynamically track and analyze user performance across multiple disparate online judges.',
+        task: 'Develop an automated data pipeline to ingest performance metrics and provide actionable insights into user achievements.',
+        action: 'Engineered a backend system in Laravel that consumes REST APIs from external judges, aggregating data and evaluating complex performance metrics in real-time.',
+        result: 'Provided an automated, insightful dashboard that eliminated manual tracking, significantly improving the evaluation process for administrators.',
+        tech: ['Laravel', 'PHP', 'REST API', 'Bootstrap'],
+        image: 'https://placehold.co/600x400/222222/a3e635?text=Helpdesk',
+        liveLink: '#',
+        sourceLink: '#',
+        isReverse: true
+    }
+]);
+</script>
+
 <template>
+    <section id="projects" class="bg-gradient-to-br py-20 bg-gray-100 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
+        <div class="container mx-auto max-w-7xl px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-teal-500 dark:text-teal-400 mb-12">
+                Engineering Case Studies
+            </h2>
 
-     <!-- Projects Section (Updated Layout) -->
-       <section id="projects" class="bg-gradient-to-br py-20 bg-gray-100 dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
-    <div class="container mx-auto max-w-7xl px-6">
-        <h2 class="text-3xl md:text-4xl font-bold text-center text-teal-500 dark:text-teal-400 mb-12">
-            Personal Projects
-        </h2>
+            <!-- Project Cards Loop -->
+            <div v-for="(project, index) in projects" :key="index"
+                 class="bg-white dark:bg-gray-800 rounded-3xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-12 md:flex transform hover:-translate-y-2 transition-all duration-300">
+                
+                <!-- Image Container -->
+                <div class="md:w-1/2 flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800/50"
+                     :class="project.isReverse ? 'order-1 md:order-2' : ''">
+                    <img :src="project.image" :alt="project.title" class="rounded-2xl w-full max-h-80 object-cover shadow-md">
+                </div>
+                
+                <!-- Content Container -->
+                <div class="md:w-1/2 p-8 md:p-12"
+                     :class="project.isReverse ? 'order-2 md:order-1' : ''">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">{{ project.title }}</h3>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div>
+                            <strong class="text-teal-600 dark:text-teal-400 text-sm uppercase tracking-wide">Situation:</strong>
+                            <p class="text-gray-700 dark:text-gray-300 mt-1">{{ project.situation }}</p>
+                        </div>
+                        <div>
+                            <strong class="text-teal-600 dark:text-teal-400 text-sm uppercase tracking-wide">Task:</strong>
+                            <p class="text-gray-700 dark:text-gray-300 mt-1">{{ project.task }}</p>
+                        </div>
+                        <div>
+                            <strong class="text-teal-600 dark:text-teal-400 text-sm uppercase tracking-wide">Action:</strong>
+                            <p class="text-gray-700 dark:text-gray-300 mt-1">{{ project.action }}</p>
+                        </div>
+                        <div>
+                            <strong class="text-teal-600 dark:text-teal-400 text-sm uppercase tracking-wide">Result:</strong>
+                            <p class="text-gray-700 dark:text-gray-300 mt-1 font-medium">{{ project.result }}</p>
+                        </div>
+                    </div>
 
-          <!-- Project Card 4 - HRM SaaS -->
-        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-8 md:flex transform hover:-translate-y-2 transition-transform duration-300">
-            <div class="md:w-1/2 p-8 md:p-12 order-2 md:order-1">
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">HRM (SaaS)</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-6">
-                    Developed a comprehensive SaaS-based Human Resource Management (HRM) platform that helps organizations manage their workforce, operations, and internal communication from a centralized dashboard. The system includes multiple HR modules such as staff management, attendance tracking, leave applications, training management, performance appraisal, reminders, document management, and calendar-based scheduling.
-                </p>
-                <p class="text-gray-700 dark:text-gray-300 mb-6">
-                    The platform also provides subscription management, working eligibility tracking, enhanced DBS management, and automated notifications to streamline HR workflows. Administrators and managers can monitor employee activities, manage records, and automate communication through email alerts and reminders.
-                </p>
-                <p class="text-gray-700 dark:text-gray-300 mb-6">
-                    The system is designed with a modern dashboard interface, modular sidebar navigation, and role-based access control to support scalable SaaS operations for multiple organizations.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">Laravel</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">Vue.js</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">Inertia.js</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">Tailwind CSS</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">MySQL</span>
-                </div>
-                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                    <a href="#" class="bg-teal-500 text-white font-semibold py-2 px-6 rounded-full text-sm hover:bg-teal-600 transition-colors duration-300 text-center">Live Site</a>
-                    <a href="/project-details/hrm-saas" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-semibold py-2 px-6 rounded-full text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300 text-center">View Details</a>
-                </div>
-            </div>
-            <div class="md:w-1/2 flex items-center justify-center p-4 order-1 md:order-2">
-                <img src="/img/hrm_dashboard.png" alt="HRM SaaS Platform" class="rounded-2xl w-full h-100 object-fit">
-            </div>
-        </div>
-        
-        <!-- Project Card 1 -->
-        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-8 md:flex transform hover:-translate-y-2 transition-transform duration-300">
-            <div class="md:w-1/2 flex items-center justify-center p-4">
-                <img src="https://placehold.co/200x100/222222/a3e635?text=LMS" alt="LMS with Payment" class="rounded-2xl w-full h-60 object-cover">
-            </div>
-            <div class="md:w-1/2 p-8 md:p-12">
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">LMS with Payment</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-6">
-                    Developed a simple LMS featuring tutor and student logins, course browsing, and integration with PayPal and Stripe for course purchases.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">Laravel</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">PHP</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">HTML</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">CSS</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">JavaScript</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">MySQL DB</span>
-                </div>
-                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                    <a href="#" class="bg-teal-500 text-white font-semibold py-2 px-6 rounded-full text-sm hover:bg-teal-600 transition-colors duration-300 text-center">Live Site</a>
-                    <a href="#" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-semibold py-2 px-6 rounded-full text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300 text-center">Source Code</a>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span v-for="(tech, tIndex) in project.tech" :key="tIndex" 
+                              class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1.5 px-4 rounded-full text-xs font-semibold border border-gray-200 dark:border-gray-600">
+                            {{ tech }}
+                        </span>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                        <a v-if="project.liveLink" :href="project.liveLink" class="bg-teal-600 text-white font-semibold py-2.5 px-6 rounded-xl text-sm hover:bg-teal-700 transition-colors duration-300 text-center shadow-lg hover:shadow-xl">Live Site</a>
+                        <a v-if="project.detailsLink" :href="project.detailsLink" class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600 font-semibold py-2.5 px-6 rounded-xl text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300 text-center">View Details</a>
+                        <a v-if="project.sourceLink" :href="project.sourceLink" class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-600 font-semibold py-2.5 px-6 rounded-xl text-sm hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300 text-center">Source Code</a>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Project Card 2 -->
-        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-8 md:flex transform hover:-translate-y-2 transition-transform duration-300">
-            <div class="md:w-1/2 p-8 md:p-12 order-2 md:order-1">
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">E-Commerce Web Application</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-6">
-                    An online shopping application where users can browse, search, and order products by brand or category after registration. Admin panel allows managing products, categories, brands, and orders.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">HTML</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">CSS</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">Bootstrap</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">JavaScript</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">jQuery</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">Laravel</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">MySQL DB</span>
-                </div>
-                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                    <a href="#" class="bg-teal-500 text-white font-semibold py-2 px-6 rounded-full text-sm hover:bg-teal-600 transition-colors duration-300 text-center">Live Site</a>
-                    <a href="#" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-semibold py-2 px-6 rounded-full text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300 text-center">Source Code</a>
-                </div>
-            </div>
-            <div class="md:w-1/2 flex items-center justify-center p-4 order-1 md:order-2">
-                <img src="https://placehold.co/300x200/222222/a3e635?text=E-Commerce" alt="E-Commerce Web Application" class="rounded-2xl w-full h-60 object-cover">
-            </div>
-        </div>
-
-        <!-- Project Card 3 -->
-        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden mb-8 md:flex transform hover:-translate-y-2 transition-transform duration-300">
-            <div class="md:w-1/2 flex items-center justify-center p-4">
-                <img src="https://placehold.co/600x400/222222/a3e635?text=Helpdesk" alt="Helpdesk Tracking System" class="rounded-2xl w-full h-60 object-cover">
-            </div>
-            <div class="md:w-1/2 p-8 md:p-12">
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Helpdesk Tracking System</h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-6">
-                    Analyzes the performance of users participating in contests across various online judges and evaluates the performance metrics, providing valuable insights into their achievements and progress.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-6">
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">Laravel</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">PHP</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">Bootstrap</span>
-                    <span class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-1 px-3 rounded-full text-xs">REST API</span>
-                </div>
-                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                    <a href="#" class="bg-teal-500 text-white font-semibold py-2 px-6 rounded-full text-sm hover:bg-teal-600 transition-colors duration-300 text-center">Live Site</a>
-                    <a href="#" class="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-semibold py-2 px-6 rounded-full text-sm hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-300 text-center">Source Code</a>
-                </div>
-            </div>
-        </div>
-
-      
-    </div>
-</section>
-
+    </section>
 </template>

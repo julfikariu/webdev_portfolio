@@ -92,7 +92,7 @@
                         </div>
                         <div class="flex items-center justify-center md:justify-start space-x-2">
                             <i class="fas fa-map-marker-alt text-teal-500 dark:text-teal-400 text-sm"></i>
-                            <span>Khulna, Bangladesh</span>
+                            <span>Dhaka, Bangladesh</span>
                         </div>
                     </div>
                     <div class="flex justify-center md:justify-start space-x-5 text-2xl pt-2">

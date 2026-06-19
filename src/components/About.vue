@@ -49,8 +49,8 @@ const scrollToSection = (id: string) => {
                     <div class="text-center lg:text-left space-y-3">
                         <div>
                             <h3 class="text-xl font-bold text-gray-900 dark:text-white">Julfikar Ali</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Full Stack Web Developer</p>
-                            <p class="text-xs text-teal-600 dark:text-teal-400 font-medium mt-1">Laravel & Vue.js Specialist</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Senior Full-Stack Engineer</p>
+                            <p class="text-xs text-teal-600 dark:text-teal-400 font-medium mt-1">Systems Architect & Database Optimization Expert</p>
                         </div>
 
                         <!-- Contact Buttons -->
@@ -79,11 +79,7 @@ const scrollToSection = (id: string) => {
                         </h4>
 
                         <p class="text-gray-600 dark:text-gray-300 leading-relaxed md:leading-loose text-sm md:text-base">
-                            I'm a professional and passionate web developer with over 4 years of experience building
-                            scalable, maintainable web applications. My main focus is crafting high-performance solutions using
-                            Laravel for backend and React for frontend, combined with strong database design (MySQL) and clean,
-                            testable code. I love turning ideas into production-ready products and continuously improving through
-                            learning and collaboration.
+                            I am a Senior Full-Stack Engineer and Systems Architect with over 4 years of experience specializing in high-performance Laravel ecosystems and robust Vue 3 applications. My core expertise lies in designing scalable architectures, automating complex pipelines, developing third-party API sync engines, and optimizing databases for massive data aggregations. I thrive on solving complex engineering challenges and delivering secure, production-ready enterprise solutions that drive measurable business impact.
                         </p>
                     </div>
 
@@ -95,7 +91,7 @@ const scrollToSection = (id: string) => {
                         </div>
                         <div class="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-xl border border-gray-100 dark:border-gray-600">
                             <p class="font-semibold text-gray-800 dark:text-gray-100 text-sm md:text-base">Location</p>
-                            <p class="text-gray-500 dark:text-gray-300 text-sm mt-1">Khulna, Bangladesh</p>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm mt-1">Dhaka, Bangladesh</p>
                         </div>
                         <div class="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-xl border border-gray-100 dark:border-gray-600">
                             <p class="font-semibold text-gray-800 dark:text-gray-100 text-sm md:text-base">Primary Stack</p>
