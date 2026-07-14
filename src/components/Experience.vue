@@ -21,31 +21,27 @@
                         <!-- Experience Item 1 -->
                         <div class="border-l-4 border-gray-300 dark:border-gray-600 pl-6 space-y-2">
                             <h4 class="text-xl font-bold text-teal-600 dark:text-teal-400">
-                                Software Engineer - UNI FLICK LTD
+                                Software Engineer - Flick Media Ltd
                             </h4>
-                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">Jul 2025 - Present</p>
+                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">Jul 2025 - Jun 2026 | Khulna, Bangladesh</p>
                             <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
-                                <li>Building a multi-tenant SaaS HRM system from scratch using Laravel, Inertia.js, Vue 3, TypeScript, TailwindCSS. with the team</li>
-                                <li>Implementing features such as staff management, leave applications, training management, account impersonation, and multi-tenant SaaS structure.
-                                </li>
-                                <li>Working on a Property Management System using CodeIgniter, handling modules like tenancy, estate agents, mortgage, insurance, reminders, and transaction history.</li>                               
+                                <li>Architected a multi-tenant SaaS HRM system from the ground up using Laravel, Inertia.js, Vue 3, TypeScript, and TailwindCSS; delivered staff management, leave workflows, training modules, account impersonation, and full tenant isolation.</li>
+                                <li>Contributed to development and maintenance of a Property Management System in CodeIgniter — tenancy lifecycle, estate-agent workflows, mortgage tracking, insurance, automated reminders, and transaction history.</li>
+                                <li>Built a cross-platform desktop time-tracker with Rust, Vue 3, and Tauri modelled on the Upwork client; added background keystroke/mouse activity counters, multiplatform packaging, and local SQLite persistence.</li>
+                                <li>Accelerated team feature delivery by embedding Cursor AI into the workflow, shortening prototyping and debugging cycles.</li>
                             </ul>
                         </div>
                         <div class="border-l-4 border-gray-300 dark:border-gray-600 pl-6 space-y-2">
                             <h4 class="text-xl font-bold text-teal-600 dark:text-teal-400">
-                                Software Engineer - Tiger Tech Co,Ltd.
+                                Software Engineer - Tiger Tech Co., Ltd.
                             </h4>
-                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">Feb 2023 - Jun 2025</p>
+                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">Feb 2023 - Jun 2025 | Tokyo, Japan — Remote</p>
                             <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
-                                <li>Implemented 3D Secure payment gateway using Veritrans.jp for secure B2B
-                                    transactions.</li>
-                                <li>Developed a Single Sign-On (SSO) solution to enhance security and streamline user
-                                    logins.</li>
-                                <li>Managed server setup and optimization on AWS EC2 using Apache, MySQL, and Laravel.
-                                </li>
-                                <li>Implemented social login integrations (Google, Microsoft, Apple) and RESTful APIs in
-                                    Laravel.</li>
-                                <li>Wrote unit tests to ensure robust and bug-free features.</li>
+                                <li>Integrated 3D Secure (3DS2) via Veritrans.jp on a high-volume B2B platform, enabling PCI-compliant credit card processing and chargeback risk mitigation.</li>
+                                <li>Architected a Single Sign-On (SSO) solution consolidating authentication across multiple enterprise applications and standardising session security policy.</li>
+                                <li>Provisioned production infrastructure on AWS EC2 with Apache, MySQL, and Laravel — server hardening, deployment automation, and staging/production environment parity.</li>
+                                <li>Implemented OAuth social login (Google, Microsoft) and authored RESTful APIs in Laravel consumed by frontend clients and third-party authentication workflows.</li>
+                                <li>Authored unit test suites covering payment and authentication flows, eliminating post-deployment regressions on critical transaction paths.</li>
                             </ul>
                         </div>
                         <!-- Experience Item 2 -->
@@ -53,29 +49,24 @@
                             <h4 class="text-xl font-bold text-teal-600 dark:text-teal-400">
                                 Software Engineer - XOR Software Solutions
                             </h4>
-                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">Oct 2021 - Jan 2023</p>
+                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">Oct 2021 - Jan 2023 | Khulna, Bangladesh</p>
                             <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
-                                <li>Served as a Full Stack Web Developer, managing both backend and frontend tasks.</li>
-                                <li>Utilized Laravel Eloquent ORM for data storage and querying from a MySQL database.
-                                </li>
-                                <li>Developed secure RESTful APIs with Laravel Passport for user authentication.</li>
-                                <li>Implemented course creation and management features in a Learning Management System
-                                    (LMS).</li>
+                                <li>Delivered full-stack implementations across Job Portal, E-commerce, B2B/B2C marketplace, and Ticketing verticals — end-to-end from schema design to production UI.</li>
+                                <li>Architected a secure API layer using Laravel Passport (OAuth2), enforcing token-based authentication across consumer and partner integrations.</li>
+                                <li>Engineered core LMS modules for course creation, enrolment, progress tracking, and content management with multi-role access for instructors, learners, and admins.</li>
+                                <li>Optimised complex MySQL queries via Laravel Eloquent ORM, improving response times on high-traffic reporting and search endpoints.</li>
                             </ul>
                         </div>
                         <!-- Experience Item 3 -->
                         <div class="border-l-4 border-gray-300 dark:border-gray-600 pl-6 space-y-2">
                             <h4 class="text-xl font-bold text-teal-600 dark:text-teal-400">
-                                Laravel Web Application Developer - BDCODER Software
+                                Web Application Developer - BDCODER Software
                             </h4>
-                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">Apr 2021 - Sep 2021</p>
+                            <p class="text-sm font-light text-gray-500 dark:text-gray-400">Apr 2021 - Sep 2021 | Khulna, Bangladesh — Remote</p>
                             <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-1">
-                                <li>Developed and implemented backend applications and RESTful APIs based on client
-                                    requirements.</li>
-                                <li>Enhanced user experience and security by integrating Google reCAPTCHA, live chat,
-                                    and AJAX search.</li>
-                                <li>Created system documentation including user manuals and technical specifications.
-                                </li>
+                                <li>Developed business-critical CMS platforms with integrated RESTful APIs and configurable content management workflows.</li>
+                                <li>Enhanced platform security by integrating Google reCAPTCHA, live chat, and AJAX real-time search, reducing bot-driven form abuse.</li>
+                                <li>Produced complete technical documentation including user manuals, system specifications, and operational runbooks for delivered systems.</li>
                             </ul>
                         </div>
                     </div>

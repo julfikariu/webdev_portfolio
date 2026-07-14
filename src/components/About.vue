@@ -25,53 +25,10 @@ const scrollToSection = (id: string) => {
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16 items-start">
-                <!-- Profile Section -->
-                <div class="flex flex-col items-center lg:items-start space-y-6">
-                    <!-- Avatar Container -->
-                    <div class="relative group">
-                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-2xl flex items-center justify-center bg-gradient-to-br from-teal-500 to-teal-300 dark:from-teal-600 dark:to-teal-400 shadow-lg transform transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl">
-                            <svg width="64" height="64" viewBox="0 0 100 100" aria-hidden="true" class="text-white md:w-16 md:h-16">
-                                <rect width="100" height="100" rx="18" fill="currentColor" opacity="0.06" />
-                                <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-size="34"
-                                    font-weight="700" fill="white"
-                                    font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto">
-                                    J A
-                                </text>
-                            </svg>
-                        </div>
-                        <!-- Status Indicator -->
-                        <div class="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 dark:bg-green-400 rounded-full border-4 border-white dark:border-gray-800">
-                            <span class="sr-only">Available for work</span>
-                        </div>
-                    </div>
-
-                    <!-- Personal Info -->
-                    <div class="text-center lg:text-left space-y-3">
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Julfikar Ali</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Senior Full-Stack Engineer</p>
-                            <p class="text-xs text-teal-600 dark:text-teal-400 font-medium mt-1">Systems Architect & Database Optimization Expert</p>
-                        </div>
-
-                        <!-- Contact Buttons -->
-                        <div class="flex flex-col sm:flex-row lg:flex-col gap-3 pt-2">
-                            <a href="mailto:julfikariucs15@gmail.com"
-                                class="inline-flex items-center justify-center gap-2 text-sm font-medium px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-all duration-200 group min-w-0">
-                                <i class="fas fa-envelope w-4 h-4 text-teal-600 dark:text-teal-400 flex-shrink-0"></i>
-                                <span class="truncate text-gray-700 dark:text-white">julfikariucs15@gmail.com</span>
-                            </a>
-
-                            <a href="tel:+8801521459316"
-                                class="inline-flex items-center justify-center gap-2 text-sm font-medium px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-all duration-200 group min-w-0">
-                                <i class="fas fa-phone-alt w-4 h-4 text-teal-600 dark:text-teal-400 flex-shrink-0"></i>
-                                <span class="truncate text-gray-700 dark:text-white">+8801521459316</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                
 
                 <!-- Content Section -->
-                <div class="lg:col-span-2 space-y-6 md:space-y-8">
+                <div class="lg:col-span-3 space-y-6 md:space-y-8">
                     <!-- Introduction -->
                     <div>
                         <h4 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">
@@ -79,7 +36,7 @@ const scrollToSection = (id: string) => {
                         </h4>
 
                         <p class="text-gray-600 dark:text-gray-300 leading-relaxed md:leading-loose text-sm md:text-base">
-                            I am a Senior Full-Stack Engineer and Systems Architect with over 4 years of experience specializing in high-performance Laravel ecosystems and robust Vue 3 applications. My core expertise lies in designing scalable architectures, automating complex pipelines, developing third-party API sync engines, and optimizing databases for massive data aggregations. I thrive on solving complex engineering challenges and delivering secure, production-ready enterprise solutions that drive measurable business impact.
+                            I am a  Full-Stack Engineer and Systems Architect with over 5 years of experience specializing in high-performance Laravel ecosystems and robust Vue 3 applications. My core expertise lies in designing scalable architectures, automating complex pipelines, developing third-party API sync engines, and optimizing databases for massive data aggregations. I thrive on solving complex engineering challenges and delivering secure, production-ready enterprise solutions that drive measurable business impact.
                         </p>
                     </div>
 
@@ -87,7 +44,7 @@ const scrollToSection = (id: string) => {
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                         <div class="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-xl border border-gray-100 dark:border-gray-600">
                             <p class="font-semibold text-gray-800 dark:text-gray-100 text-sm md:text-base">Experience</p>
-                            <p class="text-gray-500 dark:text-gray-300 text-sm mt-1">4+ years building web apps</p>
+                            <p class="text-gray-500 dark:text-gray-300 text-sm mt-1">5+ years building web apps</p>
                         </div>
                         <div class="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-xl border border-gray-100 dark:border-gray-600">
                             <p class="font-semibold text-gray-800 dark:text-gray-100 text-sm md:text-base">Location</p>
